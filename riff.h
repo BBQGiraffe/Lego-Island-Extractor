@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <sys/types.h>
 #define RIFF_ENTRY(R, DIR, ENT) ((R)->root[(DIR)].entry + (ENT))
 
 typedef struct RIFFEntry_t {
@@ -22,8 +22,8 @@ typedef struct {
     unsigned int entryMemCount;
 } RIFFFile;
 
-const char RIFFMagic[4];
-const char LISTFourCC[4];
+extern const char RIFFMagic[4];
+extern const char LISTFourCC[4];
 
 int isRIFF(char fourCC[4]);
 int isLIST(char fourCC[4]);
